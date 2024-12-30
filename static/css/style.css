@@ -1,0 +1,194 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+    background-image: url('{{ url_for("static", filename="images/bg.jpg") }}');
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Makes the background image fixed */
+}
+
+.form-container {
+    display: none; /* Hide all forms by default */
+}
+
+.form-container.active {
+    display: block; /* Show the active form */
+}
+
+.container {
+    width: 60%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.header {
+    display: flex; /* Makes children (logo and title) align side by side */
+    align-items: center;
+    justify-content: space-between; /* Ensures space between the logo and title */
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Flag (logo) styling */
+.flag {
+    width: 120px; /* Adjust the size of the logo */
+    height: auto;
+    margin-right: 15px; /* Adds space between the logo and title */
+}
+
+/* Title styling */
+.title {
+    font-size: 2rem; /* Adjust font size */
+    font-weight: bold;
+    text-align: center; /* Center the title */
+    color: #333;
+    flex-grow: 4; /* Ensures the title takes up available space between the logo and right logo */
+    text-align: left; /* Align title to the left */
+}
+
+/* Header h2 */
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+th {
+    background-color: #e74c3c;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Form Styling */
+.form-container {
+    background-color: #fafafa;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid #4CAF50;
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    background-color: #e74c3c; /* Red color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b; /* Darker red when hovered */
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    table, th, td {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.3rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    select {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}

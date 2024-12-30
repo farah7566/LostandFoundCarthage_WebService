@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background-image: url('/static/images/bg.png'); background-size: cover; background-position: center;">
+  <!-- Header Section -->
+    <header class="header">
+        <img src="{{ url_for('static', filename='images/tunisia.png') }}" alt="TN flag" class="flag">
+        <h1 class="title">               Lost and Found Carthage</h1>
+    </header>
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Register Form -->
+        <div id="register-form" class="form-container">
+             <h2>Register</h2>
+             <form id="register" action="javascript:void(0)">
+                  <input type="text" id="username" placeholder="Username" required>
+                  <input type="password" id="password" placeholder="Password" required>
+                  <select id="role" required>
+                    <option value="">Select Role</option>
+                    <option value="traveler">Traveler</option>
+                    <option value="agent">Agent</option>
+                  </select>
+                 <button type="submit">Register</button>
+             </form>
+            <p>Already have an account? <a href="javascript:void(0)" onclick="toggleForms('login')">Login here</a></p>
+        </div>
+
+
+        <!-- Login Form -->
+        <div id="login-form" class="form-container" style="display: none;">
+            <h2>Login</h2>
+            <form id="login" action="javascript:void(0)">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="javascript:void(0)" onclick="toggleForms('register')">Register here</a></p>
+        </div>
+
+        <!-- Lost and Found Section -->
+<div id="logged-in-section" style="display: none;">
+    <h1>Search Lost and Found</h1>
+
+    <!-- Search Form -->
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Enter description">
+        <button type="submit" id="searchButton">Search</button>
+    </form>
+
+    <!-- Results will be displayed here -->
+    <div id="results"></div>
+
+
+    <!-- Report Lost Item Form -->
+    <h2>Report Lost Item</h2>
+    <form id="add-item" action="javascript:void(0)">
+        <select id="reporter-type" required>
+            <option value="">Select Reporter Type</option>
+            <option value="traveler">Traveler</option>
+            <option value="agent">Agent</option>
+        </select>
+        <input type="text" id="item-name" placeholder="Item Name" required>
+        <textarea id="description" placeholder="Description" required></textarea>
+        <input type="text" id="location-lost" placeholder="Location Lost" required>
+        <input type="text" id="contact-info" placeholder="Contact Info" required>
+        <input type="hidden" id="claimed" value="false">
+        <input type="hidden" id="claimed-by" value="">
+        <select id="status" required>
+            <option value="Lost">Lost</option>
+            <option value="Claimed">Claimed</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+ <!-- Lost Items Table -->
+    <h2>Lost Items</h2>
+    <table id="lost-items-table">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Location Lost</th>
+                <th>Contact Info</th>
+                <th>Reporter Type</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Lost items will be injected here by JavaScript -->
+        </tbody>
+    </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
