@@ -1,6 +1,6 @@
 # Lost and Found API
 
-This is a Flask-based RESTful API that allows users to report and retrieve lost items. It features JWT authentication, image uploads, and supports two categories of users: travelers and agents. The API provides endpoints for reporting, listing, and updating lost items.
+This is a Flask-based RESTful API that allows users to report and retrieve lost items. It features JWT authentication and supports two categories of users: travelers and agents. The API provides endpoints for reporting, listing, and updating lost items.
 
 ## Features
 - **Report Lost Items**: Travelers can report lost items along with details and an optional image.
